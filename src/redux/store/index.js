@@ -8,6 +8,7 @@ const persitConfig = {
   key: "root",
   version: 1,
   storage,
+  
 };
 
 export const persistedReducer = persistReducer(persitConfig, rootReducer);

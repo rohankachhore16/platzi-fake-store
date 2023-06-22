@@ -1,6 +1,6 @@
 export const SERVICE_ROUTE={
   LOGIN:"auth/login",
-  SIGNUP:"/"
+  SIGNUP:"users/"
 }
 
 

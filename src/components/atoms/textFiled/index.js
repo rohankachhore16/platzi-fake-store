@@ -14,6 +14,7 @@ const TextFiledatom = ({
   error,
   InputProps,
   helperText,
+  onBlur
 }) => {
   return (
     <>
@@ -29,6 +30,7 @@ const TextFiledatom = ({
         value={value}
         onChange={onChange}
         type={type}
+        onBlur={onBlur}
         error={error}
         helperText={helperText}
         InputProps={InputProps}
