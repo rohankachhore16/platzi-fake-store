@@ -34,3 +34,19 @@ export function CreateUserService(data) {
       });
   });
 }
+export function profileService(data) {
+  return new Promise((resolve, reject) => {
+    let config = {
+      url: SERVICE_ROUTE.PROFILE,
+      method: METHODS.GET,
+      data,
+    };
+    Axios.request(config)
+      .then((res) => {
+        return resolve(res);
+      })
+      .catch((err) => {
+        return reject(err);
+      });
+  });
+}

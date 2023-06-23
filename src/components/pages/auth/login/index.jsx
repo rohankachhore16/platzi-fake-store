@@ -24,7 +24,10 @@ import TextFiledatom from "../../../atoms/textFiled";
 import LoginBackground from "../../../../asstes/images/login.gif";
 import { Formik } from "formik";
 import { useDispatch } from "react-redux";
-import { LoginAsyncThunk } from "../../../../redux/asyncThunk/authAsyncThunk";
+import {
+  LoginAsyncThunk,
+  ProfileAsyncThunk,
+} from "../../../../redux/asyncThunk/authAsyncThunk";
 import toast from "react-hot-toast";
 import * as Yup from "yup";
 import { ROUTE_DEFINATION } from "../../../../utils/routesConstant";
@@ -66,9 +69,9 @@ const Login = () => {
           component={Paper}
           elevation={6}
           square
-          //  sx={{
-          //   background: { xs: "red" },
-          // }}
+        //  sx={{
+        //   background: { xs: "red" },
+        // }}
         >
           <Box
             sx={{
@@ -99,15 +102,20 @@ const Login = () => {
                   localStorage.setItem("password", values.password);
                 }
 
-                console.log(values, "___________________Re");
                 resetForm();
 
                 dispatch(LoginAsyncThunk(values))
                   .unwrap()
                   .then((res) => {
+                    dispatch(ProfileAsyncThunk()).
+                      unwrap().then((res) => {
+                        console.log(res, "_____________Responseu");
+                      });
+
                     toast.success("Successfully created!");
                   })
                   .catch((err) => {
+                    console.log(err, "_______error");
                     toast.error("unauthorized created!");
                   });
               }}

@@ -7,6 +7,8 @@ import { useSelector } from "react-redux";
 import {Toaster} from "react-hot-toast"
 const RoutesComponent = ({ token }) => {
   if (token) {
+    Axios.defaults.headers.common["Authorization"]="Bearer "+ token.access_token
+
     return <Routes isLoggedIn={true} />;
   } else {
     return <Routes isLoggedIn={false} />;
