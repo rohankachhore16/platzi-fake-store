@@ -37,7 +37,7 @@ export const authSlice = createSlice({
       state.profileStatus= THUNK_STATUS.LOADING;
     });
     builder.addCase(ProfileAsyncThunk.fulfilled, (state, action) => {
-      console.log(action,"______priofile Actions")
+      // console.log(action,"______priofile Actions")
       state.profileStatus = THUNK_STATUS.SUCCESS;
       state.user = action?.payload?.data;
     });

@@ -84,7 +84,7 @@ const Sidebar = ({ open, setOpen }) => {
           </Box>
         </DrawerHeader>
         <Divider />
-        <List>
+        <List sx={{height:"100%"}}>
 
 <ListItemData {...{open,setOpen}}/>
         </List>

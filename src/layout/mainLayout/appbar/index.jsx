@@ -56,7 +56,6 @@ const Appbar = ({ open, setOpen }) => {
           <Typography variant="h6" noWrap component="div">
             Mini variant drawer
           </Typography>
-          <Button variant='contained' onClick={() => dispatch(removeToken())}>Log out</Button>
         </Toolbar>
 
       </AppBar>

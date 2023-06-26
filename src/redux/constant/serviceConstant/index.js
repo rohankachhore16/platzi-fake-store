@@ -1,7 +1,8 @@
 export const SERVICE_ROUTE={
   LOGIN:"auth/login",
   SIGNUP:"users/",
-  PROFILE:"auth/profile"
+  PROFILE:"auth/profile",
+  PRODUCT:"products"
 }
 
 
